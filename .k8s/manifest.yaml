@@ -139,8 +139,8 @@ spec:
             component: producer
         spec:
           restartPolicy: Never
-          nodeSelector:
-            doks.digitalocean.com/node-pool: <POOL>
+          imagePullSecrets:
+            - name: do-registry-secret
           containers:
             - name: <APP_NAME>-cronjob
               image: <IMAGE>

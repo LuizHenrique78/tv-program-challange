@@ -27,6 +27,7 @@ O projeto está dividido em camadas:
 - Configurado como proxy reverso para o microserviço
 - Gerenciamento via Kong Manager:  
   [Acessar Kong Manager](https://kongmanager-test.lh-test.net/)
+- Acessar doc fast-api [Acessar Fast api docs](https://kongadmin-test.lh-test.net/docs)
 
 **Aplicação FastAPI**:
 - Implantada em pod separado com auto-scaling horizontal
@@ -36,3 +37,5 @@ O projeto está dividido em camadas:
 - Roteamento interno via Kong Gateway
 - Namespaces segregados para diferentes componentes
 - Infraestrutura auto-escalável
+
+
