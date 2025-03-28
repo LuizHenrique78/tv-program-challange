@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from src.application.v1.endpoints import open_tv
 app = FastAPI(
-    title="Globo End Dados Challange",
+    title="Globo Eng Dados Challange",
     description="FastApi to handle tv programs date medians",
     version="1.0.0"
 )
