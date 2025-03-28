@@ -1,0 +1,23 @@
+x-common-env: &common-env
+  ENVIRONMENT: ${ENVIRONMENT}
+
+services:
+
+  redis-cluster:
+    container_name: redis-cluster
+    image: docker.io/bitnami/redis:7.2
+    ports:
+      - '6379:6379'
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    networks:
+      - network1
+    volumes:
+      - redis-cluster-data:/bitnami
+
+volumes:
+  redis-cluster-data:
+
+networks:
+  network1:
+    driver: bridge
