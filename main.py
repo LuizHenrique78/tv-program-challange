@@ -12,4 +12,4 @@ app.include_router(open_tv.router, prefix="/api/v1", tags=["Webhooks"])
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=80, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
