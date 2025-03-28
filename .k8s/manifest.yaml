@@ -61,7 +61,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: <CONFIGMAP>
-                  key: REDIS_HOST
+                  key: REDIS_PORT
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
