@@ -4,7 +4,7 @@ metadata:
   name: redis-secret-test
 type: Opaque
 data:
-  redis-password: c2VjcmV0
+  REDIS_PASSWORD: c2VjcmV0
 
 ---
 apiVersion: v1
@@ -63,7 +63,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: redis-secret-test
-                  key: redis-password
+                  key: REDIS_PASSWORD
       volumes:
         - name: redis-storage
           persistentVolumeClaim:
