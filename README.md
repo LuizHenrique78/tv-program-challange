@@ -1,18 +1,38 @@
-# tv-program-challange
+# TV Program Challenge
 
-A arquitetura do projeto está divididas em camadas, 
-- application -> onde fica os endpoints / cronjob / outras entradas
-- cross -> dependencias gerais 
-- domain -> interfaçe / serviços / entidades
-- infra -> implementação das interfaces
+## Arquitetura do Projeto
 
-obs. Toda estrutura está preparada para injeção de dependencias. Mas não implementei essa feature por conta de tempo.
+O projeto está dividido em camadas:
 
-Isso da a possibilidade de utilizarmos n connexçoes com o banco ou outras formas de importar os arquivos CSV.
+- **Application**: Contém endpoints, cronjobs e outros pontos de entrada
+- **Cross**: Dependências gerais e compartilhadas
+- **Domain**: Define interfaces, serviços e entidades
+- **Infra**: Implementações concretas das interfaces definidas na camada de domínio
 
-Nessa implementação estou utilizando redis como banco temporario e a amazon s3 para buscar o CSV que será carregado, mas há possibiliidade de ter varias outras implementaçoes.
+*Observação:* Toda a estrutura foi preparada para injeção de dependências, porém esta feature não foi implementada devido a restrições de tempo.
 
-# Ambiente
+## Implementação Atual
 
-Dentro de um cluster kubernetes a ideia é ter um cronjob configurado para rodar todo dia em uma data especifica, Assim como ter o server do fast api rodandno como micro-serviço.
+### Características Principais
+- Utiliza Redis como banco de dados temporário
+- Integração com Amazon S3 para carregamento de arquivos CSV
+- Arquitetura flexível para múltiplas implementações de:
+  - Conexões com bancos de dados
+  - Estratégias de importação de arquivos
 
+## Kubernetes Cluster Setup
+
+### Componentes Principais
+**Kong Gateway**:
+- Configurado como proxy reverso para o microserviço
+- Gerenciamento via Kong Manager:  
+  [Acessar Kong Manager](https://kongmanager-test.lh-test.net/)
+
+**Aplicação FastAPI**:
+- Implantada em pod separado com auto-scaling horizontal
+- Job programado para execução diária
+
+### Configurações Especiais:
+- Roteamento interno via Kong Gateway
+- Namespaces segregados para diferentes componentes
+- Infraestrutura auto-escalável
