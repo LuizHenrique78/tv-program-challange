@@ -110,6 +110,8 @@ spec:
 apiVersion: v1
 data:
   ENVIRONMENT: "test"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
 kind: ConfigMap
 metadata:
   name: <CONFIGMAP>
