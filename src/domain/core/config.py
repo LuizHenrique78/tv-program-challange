@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     aws_client_id: SecretStr = Field(SecretStr(""), validation_alias="AWS_CLIENT_ID")
     aws_region_name: SecretStr = Field(SecretStr(""), validation_alias="AWS_REGION_NAME")
     redis_host: str = Field("localhost", validation_alias="REDIS_HOST")
-    redis_port: str = Field(validation_alias="REDIS_PORT")
+    redis_port: int = Field(validation_alias="REDIS_PORT")
     redis_user: str = Field(validation_alias="REDIS_HOST")
     redis_password: SecretStr = Field(validation_alias="REDIS_PASSWORD")
 

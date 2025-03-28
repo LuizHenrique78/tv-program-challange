@@ -20,7 +20,7 @@ class RedisRepository(IDataBaseRepository):
         """
         try:
             cls.redis_host = ENVIRONMENT.redis_host
-            cls.redis_port = int(ENVIRONMENT.redis_port)
+            cls.redis_port = ENVIRONMENT.redis_port
             cls.redis_password = ENVIRONMENT.redis_password
 
             return cls
