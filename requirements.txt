@@ -6,3 +6,6 @@ pytest==7.3.1
 psycopg2-binary==2.9.10
 Faker==36.1.0
 httpx==0.23.0
+redis==5.2.1
+pandas==2.2.3
+boto3==1.37.22
